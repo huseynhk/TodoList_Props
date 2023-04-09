@@ -1,38 +1,131 @@
+body {
+  background-color: aliceblue;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.task_create {
+  width: 500px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task_form {
+  display: flex;
+  flex-direction: column;
 }
+
+label {
+  margin-bottom: 24px;
+  font-size: 24px;
+  color: rgb(0, 0, 133);
+  text-decoration: underline;
+}
+
+input,
+textarea {
+  background: none;
+  color: rgb(55, 55, 255);
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid blue;
+  margin-bottom: 16px;
+}
+
+input,
+textarea:focus {
+  outline: none;
+}
+
+.btn {
+  width: 150px;
+  padding: 10px;
+  margin: auto;
+  border-radius: 10px;
+  border: 2px solid rgb(0, 255, 191);
+  background-color: rgb(55, 55, 255);
+  color: #fff;
+}
+
+.btn:hover {
+  transition: 0.5s ease;
+  background-color: rgb(95, 95, 255);
+}
+
+::placeholder {
+  color: rgb(35, 35, 255);
+}
+
+.taskList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.show {
+  border: 2px solid blue;
+  border-radius: 16px;
+  width: 250px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(225, 255, 255);
+  height: 250px;
+}
+
+.show h3 {
+  border-bottom: 2px solid blue;
+  width: 100%;
+  text-align: center;
+  color: rgb(0, 0, 225);
+}
+
+.task_update{
+  border: 2px solid blue;
+  border-radius: 16px;
+  width: 250px;
+  padding: 30px;
+  background-color: rgb(225, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
+
+}
+
+.task_update label {
+  font-size: larger;
+}
+
+.updatedBtn{
+  background-color: blueviolet;
+}
+
+.updatedBtn:hover{
+  background-color: rgb(175, 106, 239);
+}
+
+
+.btnShow {
+  width: 100px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: green;
+  color: #fff;
+}
+
+.btnDlt {
+  background-color: red;
+}
+
+
