@@ -1,6 +1,11 @@
 import React, { useState } from "react";
+import { useContext } from "react";
+import TaskContext from "./Task"
 
-const Create = ({ onCreate, editProps, taskBoolen, onUpdate }) => {
+const Create = ({ editProps, taskBoolen ,onUpdate }) => {
+
+  const { createTask } = useContext(TaskContext)
+
   const [title, setTitle] = useState(editProps ? editProps.title : "");
   const [description, setDescription] = useState(
     editProps ? editProps.description : ""
@@ -18,10 +23,10 @@ const Create = ({ onCreate, editProps, taskBoolen, onUpdate }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (taskBoolen) {
-      onUpdate(editProps.id, title, description);
+      onUpdate(editProps.id, title, description)
       //True-dusa bu deyerleri qebul elesin
     } else {
-      onCreate(title, description);
+      createTask(title, description);
     }
     setTitle("");
     setDescription("");

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import Create from "./Create";
+import { useContext } from "react";
+import TaskContext from "./Task"
 
-const TaskShow = ({ taskProps, onDelete , onUpdate}) => {
-  //   console.log(taskProps);
+const TaskShow = ({taskProps}) => {
+
+  const { deleteItem , editItem } = useContext(TaskContext)
 
   const [showEdit, setShowEdit] = useState(false);
 
@@ -11,12 +14,12 @@ const TaskShow = ({ taskProps, onDelete , onUpdate}) => {
   };
 
   const handleDelete = () => {
-    onDelete(taskProps.id);
+    deleteItem(taskProps.id);
   };
 
   const handleSubmit = (id , editTitle , editDescription) => {
     setShowEdit(false);
-    onUpdate(id , editTitle , editDescription)
+    editItem(id , editTitle , editDescription)
   };
 
   return (
